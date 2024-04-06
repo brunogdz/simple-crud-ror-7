@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       # get 'articles/create'
       # get 'articles/update'
       # get 'articles/destroy'
-      resources: articles, only: [:index, :show, :create, :update, :destroy]
+      resources :articles, only: [:index, :show, :create, :update, :destroy]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
