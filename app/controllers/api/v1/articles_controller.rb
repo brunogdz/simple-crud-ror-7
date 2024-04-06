@@ -5,7 +5,14 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   def show
-
+    article = Article.find_by(id: params[:id])
+    if article
+      render json: article, status: 200
+    else
+      render json: {
+        error: "Could not find this article with this id"
+      }
+    end
   end
 
   def create

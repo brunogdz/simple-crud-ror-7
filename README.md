@@ -140,13 +140,34 @@ To list all
 
 To list one specific
 ```
-
+  def show
+    article = Article.find_by(id: params[:id])
+    if article
+      render json: article, status: 200
+    else
+      render json: {
+        error: "Could not find this article with this id"
+      }
+    end
+  end
 ```
 
-```
-```
+We got the article with the params on the link with the id, when we are creating we see that we have the id is 1 or other number.
 
 ```
+http://127.0.0.1:3000/api/v1/articles/1
+```
+For example when I set this like the link above, the api returned
+
+```
+{
+    "id": 1,
+    "title": "Test 1",
+    "body": "test 1 for test 1",
+    "author": null,
+    "created_at": "2024-04-06T19:30:50.494Z",
+    "updated_at": "2024-04-06T19:30:50.494Z"
+}
 ```
 
 ```
