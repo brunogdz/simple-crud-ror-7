@@ -31,6 +31,15 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   def update
+    article = Article.find_by(id: params[:id])
+    if article
+      article.update(title: params[:title], body: params[:body], author: params[:author])
+      render json: "Article Updated on id: #{params[:id]}"
+    else
+      render json: {
+        error: "Could not find this article with this id"
+      }
+    end
   end
 
   def destroy

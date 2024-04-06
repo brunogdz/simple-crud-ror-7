@@ -170,10 +170,28 @@ For example when I set this like the link above, the api returned
 }
 ```
 
+Now the U, the UPDATE. The update is kind of the same thing that we did on list an specific article.
+The command is:
 ```
+  def update
+    article = Article.find_by(id: params[:id])
+    if article
+      article.update(title: params[:title], body: params[:body], author: params[:author])
+      render json: "Article Updated on id: #{params[:id]}"
+    else
+      render json: {
+        error: "Could not find this article with this id"
+      }
+    end
+  end
 ```
 
+You can change the render when the update is done. I just found more interesting to show which article changed, it's getting based on the params.
+
+And the last one, the D, DELETE 😭
+
 ```
+
 ```
 
 
