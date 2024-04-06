@@ -88,3 +88,71 @@ The migrations are migrated, you will see that now have schema file, there you c
 <p align="center">
   <img src="read-images/table.png" width="350" alt="Table Image">
 </p>
+
+### Running the server
+```
+bin/rails server
+```
+
+### Testing API - CRUD
+
+Created a function on the controller 
+
+```
+  private
+  def arti_params
+    params.require(:article).permit([
+      :title,
+      :body,
+      :author
+    ])
+  end
+```
+This is the function to permit and the fields to access what we send from the api and the create function collects these data.
+
+The create function:
+```
+  def create
+    article = Article.new(
+      title: arti_params[:title],
+      body: arti_params[:body],
+      author: arti_params[[:author]]
+    )
+    if article.save
+      render json: article, status: 200
+    else
+      render json: {
+        error: "Error creating..."
+      }
+    end
+  end
+```
+
+We did the C, the CREATE. Now let's do the READ
+
+To list all
+```
+  def index
+    articles = Article.all
+    render json: articles, status: 200
+  end
+```
+
+To list one specific
+```
+
+```
+
+```
+```
+
+```
+```
+
+```
+```
+
+```
+```
+
+
