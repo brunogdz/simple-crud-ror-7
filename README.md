@@ -191,7 +191,23 @@ You can change the render when the update is done. I just found more interesting
 And the last one, the D, DELETE 😭
 
 ```
-
+  def destroy
+    article = Article.find_by(id: params[:id])
+    if article
+      article.destroy
+      render json: "Article deleted successfully"
+    else
+      render json: {
+        error: "Error deleting, could not found the article"
+      }
+    end
+  end
 ```
+
+the Delete is finish, as this document too...
+
+I hope you found this useful, and if you liked, STAR IT!
+
+Thanks everybody!!
 
 

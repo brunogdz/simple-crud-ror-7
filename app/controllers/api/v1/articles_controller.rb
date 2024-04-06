@@ -43,6 +43,15 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   def destroy
+    article = Article.find_by(id: params[:id])
+    if article
+      article.destroy
+      render json: "Article deleted successfully"
+    else
+      render json: {
+        error: "Error deleting, could not found the article"
+      }
+    end
   end
 
   private
