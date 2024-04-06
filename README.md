@@ -31,8 +31,10 @@ first of all you need to take care about the settings to run a RoR project in yo
 Where you can find this?
 
 You can go to: 
-(https://guides.rubyonrails.org/v5.0/getting_started.html)[https://guides.rubyonrails.org/v5.0/getting_started.html]
-(https://rubyinstaller.org/downloads/)[https://rubyinstaller.org/downloads/]
+
+https://guides.rubyonrails.org/v5.0/getting_started.html[https://guides.rubyonrails.org/v5.0/getting_started.html]
+
+https://rubyinstaller.org/downloads/[https://rubyinstaller.org/downloads/]
 
 
 After you installed everything
