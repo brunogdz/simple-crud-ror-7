@@ -13,6 +13,8 @@ gem "puma", ">= 5.0"
 
 gem "psych", "~> 4"
 
+gem "rspec", '~> 3.11'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
